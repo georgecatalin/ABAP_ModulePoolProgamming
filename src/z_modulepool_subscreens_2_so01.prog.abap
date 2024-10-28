@@ -13,11 +13,3 @@ MODULE status_0100 OUTPUT.
 
 
 ENDMODULE.
-*&---------------------------------------------------------------------*
-*&      Module  CUSTOM_EXIT  INPUT
-*&---------------------------------------------------------------------*
-*       text
-*----------------------------------------------------------------------*
-MODULE custom_exit INPUT.
- LEAVE TO TRANSACTION 'Z_MP_INTEGRATE'.
-ENDMODULE.

@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <PROGDIR>
-    <NAME>Z_MODULEPOOL_SUBSCREENS_1</NAME>
+    <NAME>Z_MODULEPOOL_SUBSCREENS_2</NAME>
     <SUBC>M</SUBC>
     <RLOAD>E</RLOAD>
     <FIXPT>X</FIXPT>
@@ -12,14 +12,14 @@
    <DYNPROS>
     <item>
      <HEADER>
-      <PROGRAM>Z_MODULEPOOL_SUBSCREENS_1</PROGRAM>
+      <PROGRAM>Z_MODULEPOOL_SUBSCREENS_2</PROGRAM>
       <SCREEN>0100</SCREEN>
       <LANGUAGE>E</LANGUAGE>
       <DESCRIPT>Main Screen</DESCRIPT>
       <TYPE>N</TYPE>
       <NEXTSCREEN>0100</NEXTSCREEN>
       <LINES>027</LINES>
-      <COLUMNS>123</COLUMNS>
+      <COLUMNS>121</COLUMNS>
      </HEADER>
      <CONTAINERS>
       <RPY_DYCATT>
@@ -57,7 +57,7 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
        <NAME>VBAK-VBELN</NAME>
-       <TEXT>?__________________</TEXT>
+       <TEXT>___________________</TEXT>
        <LINE>002</LINE>
        <COLUMN>020</COLUMN>
        <LENGTH>019</LENGTH>
@@ -70,7 +70,6 @@
        <PARAM_ID>AUN</PARAM_ID>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-       <REQU_ENTRY>O</REQU_ENTRY>
       </RPY_DYFATC>
       <RPY_DYFATC>
        <CONT_TYPE>SCREEN</CONT_TYPE>
@@ -84,22 +83,6 @@
        <VISLENGTH>037</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <PUSH_FCODE>DISPLAY</PUSH_FCODE>
-       <FORMAT>CHAR</FORMAT>
-       <REQU_ENTRY>N</REQU_ENTRY>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>SCREEN</CONT_TYPE>
-       <CONT_NAME>SCREEN</CONT_NAME>
-       <TYPE>PUSH</TYPE>
-       <NAME>BACK_LBL</NAME>
-       <TEXT>GO_BACK____________________________</TEXT>
-       <LINE>004</LINE>
-       <COLUMN>042</COLUMN>
-       <LENGTH>035</LENGTH>
-       <VISLENGTH>035</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <PUSH_FCODE>BACK</PUSH_FCODE>
-       <PUSH_FTYPE>E</PUSH_FTYPE>
        <FORMAT>CHAR</FORMAT>
        <REQU_ENTRY>N</REQU_ENTRY>
       </RPY_DYFATC>
@@ -132,16 +115,13 @@
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE> MODULE CUSTOM_EXIT AT EXIT-COMMAND.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
        <LINE> MODULE USER_COMMAND_0100.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
     </item>
     <item>
      <HEADER>
-      <PROGRAM>Z_MODULEPOOL_SUBSCREENS_1</PROGRAM>
+      <PROGRAM>Z_MODULEPOOL_SUBSCREENS_2</PROGRAM>
       <SCREEN>0101</SCREEN>
       <LANGUAGE>E</LANGUAGE>
       <DESCRIPT>Subscreen to be called</DESCRIPT>
