@@ -11,3 +11,4 @@ Code sample for practicing ABAP Language concepts covering multiple topics:
 - how to integrate multiple ABAP programs in a single program
 - how to use the AT EXIT-COMMAND to avoid the validation of an I/O control 
 
+The source code was committed using ABAPGit and is contained within a package called ZGEORGECA.
