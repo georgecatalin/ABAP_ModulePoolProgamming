@@ -9,7 +9,9 @@ Code sample for practicing ABAP Language concepts covering multiple topics:
 - how to create modal box screens
 - how to create and populate Tabs with Tab Strip Wizard
 - how to integrate multiple ABAP programs in a single program
-- how to use the AT EXIT-COMMAND to avoid the validation of an I/O control 
+- how to use the AT EXIT-COMMAND to avoid the validation of an I/O control
+- how to change the properties of the fields in a screen dynamically at runtime
+- how to create and populate a drop-down list control
 
 The source code was committed using ABAPGit and is contained within a package called ZGEORGECA.
 
