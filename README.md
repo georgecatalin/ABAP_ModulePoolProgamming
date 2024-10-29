@@ -1,4 +1,4 @@
-# ABAP_ModulePoolProgamming
+# Practice examples of using Module Pool Progamming (dialog programming) with ABAP on SAP
 Code sample for practicing ABAP Language concepts covering multiple topics:
 - the use of module pool programing events PBP (Process before Output), PAI (Process after input), POV (Process on value erequest), POH (Process on Help request )
 - creating the "Hello World" module pool programming example
