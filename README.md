@@ -15,6 +15,8 @@ Code sample for practicing ABAP Language concepts covering multiple topics:
 - how to create and use select-options for selection an interval of values or multiple values individually
 - how to create and use multiple subscreens in a single screen
 - how to select lines in the table control
+- how to use the event "Process on Value Request" with module pool programming
+- how to use the event "Process on Help Request" with module pool programming
 
 The source code was committed using ABAPGit and is contained within a package called ZGEORGECA.
 
