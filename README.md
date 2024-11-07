@@ -20,5 +20,3 @@ Code sample for practicing ABAP Language concepts covering multiple topics:
 
 The source code was committed using ABAPGit and is contained within a package called ZGEORGECA.
 
-## Supplementary references
-* https://www.youtube.com/watch?v=WqzuSQUKric&list=PLM3lhmHjSeITYl3Jz1dx1l0faMUsik8lV&index=1
