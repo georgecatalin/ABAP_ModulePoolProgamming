@@ -1,20 +1,14 @@
 *----------------------------------------------------------------------*
-***INCLUDE ZGC_MPP_POCDM2_USER_COMMANDI01.
+***INCLUDE ZGC_MPP_POCDM2_VALIDATE_MODI01.
 *----------------------------------------------------------------------*
 *&---------------------------------------------------------------------*
-*&      Module  USER_COMMAND_0140  INPUT
+*&      Module  VALIDATE_MODIFY_ROW  INPUT
 *&---------------------------------------------------------------------*
 *       text
 *----------------------------------------------------------------------*
-MODULE user_command_0140 INPUT.
-  CASE sy-ucomm.
-    WHEN 'EXIT'.
-      PERFORM action_for_exit.
-    WHEN 'REFRESH'.
-      PERFORM action_for_refresh.
-    WHEN 'SAVE'.
-      PERFORM action_for_save.
-    WHEN 'ENTER'.
-      GET CURSOR LINE lv_tabix.
-  ENDCASE.
+MODULE validate_modify_row INPUT.
+
+
+
+
 ENDMODULE.

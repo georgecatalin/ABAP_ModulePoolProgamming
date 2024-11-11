@@ -352,6 +352,7 @@
        <CONT_TYPE>SCREEN</CONT_TYPE>
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>OKCODE</TYPE>
+       <NAME>OK_CODE</NAME>
        <TEXT>____________________</TEXT>
        <LENGTH>020</LENGTH>
        <VISLENGTH>020</VISLENGTH>
@@ -623,25 +624,25 @@
        <LINE>*&amp;SPWIZARD: PBO FLOW LOGIC FOR TABLECONTROL &apos;TBL_ITEMS&apos;</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>  MODULE TBL_ITEMS_CHANGE_TC_ATTR.</LINE>
+       <LINE>  MODULE tbl_items_change_tc_attr.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*&amp;SPWIZARD: MODULE TBL_ITEMS_CHANGE_COL_ATTR.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>  LOOP AT   LT_ITEM</LINE>
+       <LINE>  LOOP AT   lt_item</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>       INTO LS_ITEM</LINE>
+       <LINE>       INTO ls_item</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>       WITH CONTROL TBL_ITEMS</LINE>
+       <LINE>       WITH CONTROL tbl_items</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>       CURSOR TBL_ITEMS-CURRENT_LINE.</LINE>
+       <LINE>       CURSOR tbl_items-current_line.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>    MODULE TBL_ITEMS_GET_LINES.</LINE>
+       <LINE>    MODULE tbl_items_get_lines.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*&amp;SPWIZARD:   MODULE TBL_ITEMS_CHANGE_FIELD_ATTR</LINE>
@@ -651,7 +652,7 @@
       </RPY_DYFLOW>
       <RPY_DYFLOW/>
       <RPY_DYFLOW>
-       <LINE> MODULE STATUS_0140.</LINE>
+       <LINE>  MODULE status_0140.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -659,56 +660,66 @@
       <RPY_DYFLOW>
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
+      <RPY_DYFLOW/>
       <RPY_DYFLOW>
        <LINE>*&amp;SPWIZARD: PAI FLOW LOGIC FOR TABLECONTROL &apos;TBL_ITEMS&apos;</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>  LOOP AT LT_ITEM.</LINE>
+       <LINE>  LOOP AT lt_item.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>    CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      FIELD LS_ITEM-ORDERNUMBER.</LINE>
+       <LINE>      FIELD ls_item-ordernumber.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      FIELD LS_ITEM-ORDERPOSITION.</LINE>
+       <LINE>      FIELD ls_item-orderposition MODULE validate_order_line.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      FIELD LS_ITEM-ARTICLECODE.</LINE>
+       <LINE>      &quot; validate a single field executes after pressing ENTER key</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      FIELD LS_ITEM-DESCRIPTION.</LINE>
+       <LINE>      FIELD ls_item-articlecode.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      FIELD LS_ITEM-QUANTITY.</LINE>
+       <LINE>      FIELD ls_item-description.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      FIELD LS_ITEM-UNITOFMEASURE.</LINE>
+       <LINE>      FIELD ls_item-quantity.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      FIELD LS_ITEM-NETUNITPRICE.</LINE>
+       <LINE>      FIELD ls_item-unitofmeasure.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      FIELD LS_ITEM-CURRENCY.</LINE>
+       <LINE>      FIELD ls_item-netunitprice.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      MODULE TBL_ITEMS_MODIFY ON CHAIN-REQUEST.</LINE>
+       <LINE>      FIELD ls_item-currency.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>    endchain.</LINE>
+       <LINE>      MODULE tbl_items_fields_validation.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>    FIELD LS_ITEM-SELECTION_HELPER</LINE>
+       <LINE>      &quot; validate multiple fields at once</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      MODULE TBL_ITEMS_MARK ON REQUEST.</LINE>
+       <LINE>      MODULE tbl_items_modify ON CHAIN-REQUEST.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    ENDCHAIN.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>    FIELD ls_item-selection_helper</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>      MODULE tbl_items_mark ON REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>  ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>  MODULE TBL_ITEMS_USER_COMMAND.</LINE>
+       <LINE>  MODULE tbl_items_user_command.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*&amp;SPWIZARD: MODULE TBL_ITEMS_CHANGE_TC_ATTR.</LINE>
@@ -718,20 +729,20 @@
       </RPY_DYFLOW>
       <RPY_DYFLOW/>
       <RPY_DYFLOW>
-       <LINE> MODULE USER_COMMAND_0140.</LINE>
+       <LINE>  MODULE user_command_0140.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW/>
       <RPY_DYFLOW>
        <LINE>PROCESS ON VALUE-REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>   FIELD ZGC_1_OH-CURRENCY MODULE F4_suggest_currency.</LINE>
+       <LINE>  FIELD zgc_1_oh-currency MODULE F4_suggest_currency.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>   FIELD LS_ITEM-ARTICLECODE MODULE F4_suggest_code.</LINE>
+       <LINE>  FIELD ls_item-articlecode MODULE F4_suggest_code.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>   FIELD LS_ITEM-CURRENCY MODULE F4_suggest_currency_table_cell.</LINE>
+       <LINE>  FIELD ls_item-currency MODULE F4_suggest_currency_table_cell.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
     </item>
@@ -797,6 +808,16 @@
       <ICON_TEXT>Save data</ICON_TEXT>
       <INFO_TEXT>Save table  to database</INFO_TEXT>
      </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>VALIDATE</CODE>
+      <TEXTNO>001</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <TEXT_NAME>ICON_INVERT_COLUMN</TEXT_NAME>
+      <ICON_ID>@8K@</ICON_ID>
+      <FUN_TEXT>VALIDATE</FUN_TEXT>
+      <ICON_TEXT>Validate Row Entry</ICON_TEXT>
+      <INFO_TEXT>Validate the data in the current table row</INFO_TEXT>
+     </RSMPE_FUNT>
     </FUN>
     <MTX>
      <RSMPE_MNLT>
@@ -829,6 +850,12 @@
       <NO>03</NO>
       <PFNO>16</PFNO>
      </RSMPE_BUT>
+     <RSMPE_BUT>
+      <PFK_CODE>000001</PFK_CODE>
+      <CODE>0001</CODE>
+      <NO>04</NO>
+      <PFNO>17</PFNO>
+     </RSMPE_BUT>
     </BUT>
     <PFK>
      <RSMPE_PFK>
@@ -847,6 +874,12 @@
       <CODE>000001</CODE>
       <PFNO>16</PFNO>
       <FUNCODE>SAVE</FUNCODE>
+      <FUNNO>001</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>000001</CODE>
+      <PFNO>17</PFNO>
+      <FUNCODE>VALIDATE</FUNCODE>
       <FUNNO>001</FUNNO>
      </RSMPE_PFK>
     </PFK>
@@ -870,6 +903,10 @@
      <RSMPE_STAF>
       <STATUS>STATUSBAR</STATUS>
       <FUNCTION>SAVE</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>STATUSBAR</STATUS>
+      <FUNCTION>VALIDATE</FUNCTION>
      </RSMPE_STAF>
     </SET>
     <DOC>
