@@ -28,6 +28,9 @@ TYPES: BEGIN OF ty_item,
 DATA: lt_item TYPE TABLE OF ty_item,
       ls_item TYPE ty_item.
 
+DATA: lt_item_save TYPE TABLE OF ZGC_1_OI,
+      ls_item_save TYPE ZGC_1_OI.
+
 INCLUDE zgc_mpp_pocdm2_status_0140o01.
 
 INCLUDE zgc_mpp_pocdm2_user_commandi01.
