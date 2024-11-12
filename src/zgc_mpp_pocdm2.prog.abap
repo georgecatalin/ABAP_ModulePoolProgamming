@@ -8,6 +8,7 @@ PROGRAM zgc_mpp_pocdm2.
 * Declare variables for internal tables and work areas to be used with the UI controls
 TABLES: zgc_1_oh.
 
+DATA: ls_db_table TYPE ZGC_1_OI.
 
 DATA: lt_header TYPE STANDARD TABLE OF zgc_1_oh,
       ls_header TYPE zgc_1_oh.
@@ -64,36 +65,6 @@ ENDMODULE.
 *&SPWIZARD: INPUT MODULE FOR TC 'TBL_ITEMS'. DO NOT CHANGE THIS LINE!
 *&SPWIZARD: MODIFY TABLE
 MODULE tbl_items_modify INPUT.
-
-  " make sure that each cell of the table has data in it
-  IF ls_item-ordernumber IS INITIAL.
-
-    MESSAGE 'Please fill in Order Number field' TYPE 'E'.
-  ENDIF.
-
-  IF ls_item-orderposition IS INITIAL.
-    MESSAGE 'Please fill in Order Line field' TYPE 'E'.
-  ENDIF.
-
-  IF ls_item-articlecode IS INITIAL.
-    MESSAGE 'Please fill in Article Code field' TYPE 'E'.
-  ENDIF.
-
-  IF ls_item-description IS INITIAL.
-    MESSAGE 'Please fill in Description field' TYPE 'E'.
-  ENDIF.
-
-  IF ls_item-unitofmeasure IS INITIAL.
-    MESSAGE 'Please fill in Unit of Measure field' TYPE 'E'.
-  ENDIF.
-
-  IF ls_item-netunitprice IS INITIAL.
-    MESSAGE 'Please fill in Net Unit Price field' TYPE 'E'.
-  ENDIF.
-
-  IF ls_item-currency IS INITIAL.
-    MESSAGE 'Please fill in Currency field' TYPE 'E'.
-  ENDIF.
 
   MODIFY lt_item
     FROM ls_item
