@@ -8,6 +8,8 @@ PROGRAM zgc_mpp_pocdm2.
 * Declare variables for internal tables and work areas to be used with the UI controls
 TABLES: zgc_1_oh.
 
+DATA: lv_sum TYPE p DECIMALS 2.
+
 DATA: ls_db_table TYPE ZGC_1_OI.
 
 DATA: lt_header TYPE STANDARD TABLE OF zgc_1_oh,
@@ -63,6 +65,8 @@ ENDMODULE.
 *&SPWIZARD: GET LINES OF TABLECONTROL
 MODULE tbl_items_get_lines OUTPUT.
   g_tbl_items_lines = sy-loopc.
+
+
 ENDMODULE.
 
 *&SPWIZARD: INPUT MODULE FOR TC 'TBL_ITEMS'. DO NOT CHANGE THIS LINE!
@@ -415,3 +419,5 @@ FORM fcode_tc_demark_lines USING p_tc_name
 ENDFORM.                                          "fcode_tc_mark_lines
 
 INCLUDE zgc_mpp_pocdm2_validate_modi01.
+
+INCLUDE zgc_mpp_pocdm2_update_amouni01.

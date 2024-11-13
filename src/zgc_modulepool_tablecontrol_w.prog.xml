@@ -19,7 +19,7 @@
       <TYPE>N</TYPE>
       <NEXTSCREEN>0100</NEXTSCREEN>
       <LINES>027</LINES>
-      <COLUMNS>122</COLUMNS>
+      <COLUMNS>124</COLUMNS>
      </HEADER>
      <CONTAINERS>
       <RPY_DYCATT>
@@ -60,6 +60,21 @@
        <PUSH_FCODE>SAVE</PUSH_FCODE>
        <FORMAT>CHAR</FORMAT>
        <REQU_ENTRY>N</REQU_ENTRY>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>LV_SUM</NAME>
+       <TEXT>_________________</TEXT>
+       <LINE>002</LINE>
+       <COLUMN>061</COLUMN>
+       <LENGTH>017</LENGTH>
+       <VISLENGTH>017</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>DEC</FORMAT>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
       </RPY_DYFATC>
       <RPY_DYFATC>
        <CONT_TYPE>SCREEN</CONT_TYPE>
@@ -183,13 +198,20 @@
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT lt_item INTO ls_item WITH CONTROL mytable.</LINE>
+       <LINE>LOOP AT lt_item INTO ls_item WITH CONTROL mytable</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>   CURSOR mytable-CURRENT_LINE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>ENDLOOP.</LINE>
       </RPY_DYFLOW>
+      <RPY_DYFLOW/>
       <RPY_DYFLOW>
-       <LINE>* MODULE STATUS_0100.</LINE>
+       <LINE> MODULE STATUS_0100.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE> MODULE initialize_table.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -205,6 +227,9 @@
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>ENDLOOP.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>MODULE get_sum.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE> MODULE USER_COMMAND_0100.</LINE>

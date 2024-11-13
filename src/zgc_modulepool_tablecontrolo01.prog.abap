@@ -1,11 +1,20 @@
 *----------------------------------------------------------------------*
-***INCLUDE ZGC_MODULEPOOL_TABLECONTROLI02.
+***INCLUDE ZGC_MODULEPOOL_TABLECONTROLO01.
 *----------------------------------------------------------------------*
 *&---------------------------------------------------------------------*
-*&      Module  GET_MODIFIED_RECORDS  INPUT
+*& Module INITIALIZE_TABLE OUTPUT
 *&---------------------------------------------------------------------*
-*       text
-*----------------------------------------------------------------------*
-MODULE get_modified_records INPUT.
-   MODIFY lt_item FROM ls_item INDEX mytable-CURRENT_LINE.
+*&
+*&---------------------------------------------------------------------*
+MODULE initialize_table OUTPUT.
+   IF lt_item IS INITIAL.
+     DO 10 TIMES.
+       APPEND INITIAL LINE TO lt_item.
+     ENDDO.
+   ENDIF.
+
+
+
+
+
 ENDMODULE.

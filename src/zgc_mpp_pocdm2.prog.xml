@@ -692,7 +692,7 @@
        <LINE>      FIELD ls_item-unitofmeasure.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>      FIELD ls_item-netunitprice.</LINE>
+       <LINE>      FIELD ls_item-netunitprice MODULE update_amount.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>      FIELD ls_item-currency.</LINE>
@@ -779,6 +779,12 @@
       <FUN_TEXT>Cancel</FUN_TEXT>
      </RSMPE_FUNT>
      <RSMPE_FUNT>
+      <CODE>CS</CODE>
+      <TEXTNO>001</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>CS</FUN_TEXT>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
       <CODE>EXIT</CODE>
       <TEXTNO>001</TEXTNO>
       <TEXT_TYPE>S</TEXT_TYPE>
@@ -791,6 +797,7 @@
      <RSMPE_FUNT>
       <CODE>REFRESH</CODE>
       <TEXTNO>001</TEXTNO>
+      <TYPE>S</TYPE>
       <TEXT_TYPE>S</TEXT_TYPE>
       <TEXT_NAME>ICON_REFRESH</TEXT_NAME>
       <ICON_ID>@42@</ICON_ID>
@@ -860,6 +867,12 @@
     <PFK>
      <RSMPE_PFK>
       <CODE>000001</CODE>
+      <PFNO>02</PFNO>
+      <FUNCODE>CS</FUNCODE>
+      <FUNNO>001</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>000001</CODE>
       <PFNO>13</PFNO>
       <FUNCODE>EXIT</FUNCODE>
       <FUNNO>001</FUNNO>
@@ -891,6 +904,10 @@
      <RSMPE_STAF>
       <STATUS>STATUSBAR</STATUS>
       <FUNCTION>CANCEL</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>STATUSBAR</STATUS>
+      <FUNCTION>CS</FUNCTION>
      </RSMPE_STAF>
      <RSMPE_STAF>
       <STATUS>STATUSBAR</STATUS>

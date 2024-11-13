@@ -1,11 +1,15 @@
 *----------------------------------------------------------------------*
-***INCLUDE ZGC_MODULEPOOL_TABLECONTROLI02.
+***INCLUDE ZGC_MODULEPOOL_TABLECONTROLO02.
 *----------------------------------------------------------------------*
 *&---------------------------------------------------------------------*
-*&      Module  GET_MODIFIED_RECORDS  INPUT
+*& Module STATUS_0100 OUTPUT
 *&---------------------------------------------------------------------*
-*       text
-*----------------------------------------------------------------------*
-MODULE get_modified_records INPUT.
-   MODIFY lt_item FROM ls_item INDEX mytable-CURRENT_LINE.
+*&
+*&---------------------------------------------------------------------*
+MODULE status_0100 OUTPUT.
+* SET PF-STATUS 'xxxxxxxx'.
+* SET TITLEBAR 'xxx'.
+
+ LV_SUM = lv_sum.
+
 ENDMODULE.
