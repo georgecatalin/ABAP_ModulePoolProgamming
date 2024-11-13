@@ -9,7 +9,10 @@ PROGRAM ZGC_MODULEPOOL_TABLECONTROL_W.
 
 CONTROLS: mytable TYPE TABLEVIEW USING SCREEN '0100'.
 
-DATA: lv_sum TYPE p DECIMALS 2.
+DATA: lv_sum TYPE p DECIMALS 2,
+      lv_old_price TYPE p DECIMALS 2.
+
+DATA: lv_current_line TYPE i.
 
 
 TYPES: BEGIN OF ty_item,

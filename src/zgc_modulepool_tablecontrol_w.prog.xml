@@ -232,7 +232,11 @@
        <LINE>MODULE get_sum.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE> MODULE USER_COMMAND_0100.</LINE>
+       <LINE>MODULE apply_discounts.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW/>
+      <RPY_DYFLOW>
+       <LINE>MODULE USER_COMMAND_0100.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
     </item>

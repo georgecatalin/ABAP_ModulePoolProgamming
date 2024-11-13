@@ -30,3 +30,23 @@ MODULE get_sum INPUT.
  ENDLOOP.
 
 ENDMODULE.
+*&---------------------------------------------------------------------*
+*&      Module  APPLY_DISCOUNTS  INPUT
+*&---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+MODULE apply_discounts INPUT.
+
+  IF lv_sum > 500.
+
+    LOOP AT lt_item ASSIGNING FIELD-SYMBOL(<fs_record>).
+      IF sy-tabix = lv_current_line.
+        lv_old_price = <fs_record>-netunitprice.
+        <fs_record>-netunitprice = lv_old_price * '0.25' .
+        EXIT.
+      ENDIF.
+    ENDLOOP.
+
+   ENDIF.
+
+ENDMODULE.
