@@ -19,7 +19,7 @@
       <TYPE>N</TYPE>
       <NEXTSCREEN>0100</NEXTSCREEN>
       <LINES>027</LINES>
-      <COLUMNS>124</COLUMNS>
+      <COLUMNS>125</COLUMNS>
      </HEADER>
      <CONTAINERS>
       <RPY_DYCATT>
@@ -52,9 +52,11 @@
        <TYPE>PUSH</TYPE>
        <NAME>SAVE_BTN</NAME>
        <TEXT>save__________________________________________</TEXT>
+       <ICON_NAME>ICON_SELECT_ALL</ICON_NAME>
+       <WITH_ICON>X</WITH_ICON>
        <LINE>002</LINE>
        <COLUMN>004</COLUMN>
-       <LENGTH>046</LENGTH>
+       <LENGTH>051</LENGTH>
        <VISLENGTH>046</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <PUSH_FCODE>SAVE</PUSH_FCODE>

@@ -12,7 +12,7 @@ MODULE status_0140 OUTPUT.
 
   PERFORM set_ordernumber_only_output.
 
-  REFRESH CONTROL 'tbl_items' FROM SCREEN 140.
+  ZGC_1_OH-TOTALAMOUNT = lv_sum. " refresh the value in the I/O control with sum value
 
 ENDMODULE.
 *&---------------------------------------------------------------------*
@@ -47,22 +47,11 @@ ENDFORM.
 *&---------------------------------------------------------------------*
 FORM action_for_save .
   " do stuff to save screen table data to database table
-  LOOP AT lt_item INTO ls_item.
-    MOVE-CORRESPONDING ls_item TO ls_item_save.
-    APPEND ls_item_save TO lt_item_save.
-  ENDLOOP.
-
   MODIFY ZGC_1_OI FROM TABLE lt_item_save.
 
   IF sy-subrc = 0.
     MESSAGE 'Data successfully saved to database' TYPE 'W'.
   ENDIF.
-
-  REFRESH lt_item.
-  LOOP AT lt_item_save INTO ls_item_save.
-    MOVE-CORRESPONDING ls_item_save TO ls_item.
-    APPEND ls_item TO lt_item.
-  ENDLOOP.
 
 ENDFORM.
 *&---------------------------------------------------------------------*

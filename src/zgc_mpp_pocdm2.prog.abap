@@ -8,7 +8,11 @@ PROGRAM zgc_mpp_pocdm2.
 * Declare variables for internal tables and work areas to be used with the UI controls
 TABLES: zgc_1_oh.
 
-DATA: lv_sum TYPE p DECIMALS 2.
+DATA: lv_sum TYPE p DECIMALS 2,
+      lv_old_price TYPE p DECIMALS 2.
+
+DATA: lv_current_line TYPE i.
+DATA: gv_itemdescription TYPE C LENGTH 40 VALUE '  '.
 
 DATA: ls_db_table TYPE ZGC_1_OI.
 
@@ -54,7 +58,7 @@ MODULE tbl_items_change_tc_attr OUTPUT.
   IF lt_item[] IS INITIAL.
     CLEAR ls_item.
 
-    DO 4 TIMES.
+    DO 20 TIMES.
        APPEND ls_item TO lt_item.
     ENDDO.
   ENDIF.
@@ -66,16 +70,31 @@ ENDMODULE.
 MODULE tbl_items_get_lines OUTPUT.
   g_tbl_items_lines = sy-loopc.
 
+  IF tbl_items-current_line = lv_current_line.
+    ls_item-ordernumber = ZGC_1_OH-ORDERNUMBER.
+    ls_item-description = gv_itemdescription.
+  ENDIF.
+
 
 ENDMODULE.
 
 *&SPWIZARD: INPUT MODULE FOR TC 'TBL_ITEMS'. DO NOT CHANGE THIS LINE!
 *&SPWIZARD: MODIFY TABLE
 MODULE tbl_items_modify INPUT.
-
+  lv_current_line = tbl_items-current_line.
   MODIFY lt_item
     FROM ls_item
-    INDEX tbl_items-current_line.
+    INDEX lv_current_line.
+
+  READ TABLE lt_item INTO ls_item INDEX lv_current_line.
+
+  CALL FUNCTION 'Z_GET_ITEM_DESC'
+    EXPORTING
+      IV_ITEMCODE = ls_item-articlecode
+    IMPORTING
+      EV_ITEMDESC = gv_itemdescription.
+
+
 ENDMODULE.
 
 *&SPWIZARD: INPUT MODUL FOR TC 'TBL_ITEMS'. DO NOT CHANGE THIS LINE!
@@ -421,3 +440,9 @@ ENDFORM.                                          "fcode_tc_mark_lines
 INCLUDE zgc_mpp_pocdm2_validate_modi01.
 
 INCLUDE zgc_mpp_pocdm2_update_amouni01.
+
+INCLUDE zgc_mpp_pocdm2_initialize_to01.
+
+INCLUDE zgc_mpp_pocdm2_get_value_pri01.
+
+INCLUDE zgc_mpp_pocdm2_set_orderid_o01.

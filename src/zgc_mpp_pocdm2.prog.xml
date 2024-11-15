@@ -641,6 +641,7 @@
       <RPY_DYFLOW>
        <LINE>       CURSOR tbl_items-current_line.</LINE>
       </RPY_DYFLOW>
+      <RPY_DYFLOW/>
       <RPY_DYFLOW>
        <LINE>    MODULE tbl_items_get_lines.</LINE>
       </RPY_DYFLOW>
@@ -654,6 +655,13 @@
       <RPY_DYFLOW>
        <LINE>  MODULE status_0140.</LINE>
       </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  MODULE initialize_table.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  MODULE set_orderid_in_tblrow.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW/>
       <RPY_DYFLOW>
        <LINE>*</LINE>
       </RPY_DYFLOW>
@@ -728,6 +736,15 @@
        <LINE>*&amp;SPWIZARD: MODULE TBL_ITEMS_CHANGE_COL_ATTR.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW/>
+      <RPY_DYFLOW>
+       <LINE>  MODULE calculate_value_alllines.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  MODULE apply_discounts_to_unitprices.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  MODULE recalculate_value_alllines.</LINE>
+      </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>  MODULE user_command_0140.</LINE>
       </RPY_DYFLOW>
