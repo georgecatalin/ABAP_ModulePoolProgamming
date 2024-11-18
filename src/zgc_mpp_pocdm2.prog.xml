@@ -798,6 +798,7 @@
      <RSMPE_FUNT>
       <CODE>CS</CODE>
       <TEXTNO>001</TEXTNO>
+      <TYPE>S</TYPE>
       <TEXT_TYPE>S</TEXT_TYPE>
       <FUN_TEXT>CS</FUN_TEXT>
      </RSMPE_FUNT>

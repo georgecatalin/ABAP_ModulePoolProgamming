@@ -70,9 +70,10 @@ ENDMODULE.
 MODULE tbl_items_get_lines OUTPUT.
   g_tbl_items_lines = sy-loopc.
 
+   ls_item-ordernumber = ZGC_1_OH-ORDERNUMBER. "Fill-in automatically the value existing in the I/O field for the selected line in the table
+
   IF tbl_items-current_line = lv_current_line.
-    ls_item-ordernumber = ZGC_1_OH-ORDERNUMBER.
-    ls_item-description = gv_itemdescription.
+    ls_item-description = gv_itemdescription.   "Set the item description to the value extracted with the function from table matk
   ENDIF.
 
 
@@ -85,6 +86,10 @@ MODULE tbl_items_modify INPUT.
   MODIFY lt_item
     FROM ls_item
     INDEX lv_current_line.
+
+DATA: this_line TYPE c LENGTH 30.
+
+ GET CURSOR FIELD this_line.
 
   READ TABLE lt_item INTO ls_item INDEX lv_current_line.
 
