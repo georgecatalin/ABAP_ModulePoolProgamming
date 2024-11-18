@@ -20,3 +20,4 @@ Code sample for practicing ABAP Language concepts covering multiple topics:
 
 The source code was committed using ABAPGit and is contained within a package called ZGEORGECA.
 
+<img src="sap_logo.png" alt="SAP Logo" width="100">
