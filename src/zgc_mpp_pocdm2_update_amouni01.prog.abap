@@ -21,6 +21,10 @@ ENDMODULE.
 MODULE apply_discounts_to_unitprices INPUT.
 
 " Enter the discount conditions here
+
+IF lv_old_sum >= 0.
+  " do nothing
+ELSE.
  IF lv_sum > 500 AND lv_sum < 1000.
     LOOP AT lt_item ASSIGNING FIELD-SYMBOL(<fs_item_1>).
       lv_old_price = <fs_item_1>-netunitprice.
@@ -32,6 +36,8 @@ MODULE apply_discounts_to_unitprices INPUT.
         <fs_item_2>-netunitprice = lv_old_price * '0.5'.
       ENDLOOP.
     ENDIF.
+ENDIF.
+
  ENDMODULE.
 
 
@@ -45,6 +51,7 @@ MODULE apply_discounts_to_unitprices INPUT.
 *& <--  p2        text
 *&---------------------------------------------------------------------*
 FORM calculate_sum .
+  lv_old_sum = lv_sum.
   CLEAR lv_sum.
   LOOP AT lt_item INTO ls_item.
     lv_sum = lv_sum + ls_item-netunitprice * ls_item-quantity.

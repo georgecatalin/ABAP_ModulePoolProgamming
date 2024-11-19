@@ -9,9 +9,13 @@ PROGRAM zgc_mpp_pocdm2.
 TABLES: zgc_1_oh.
 
 DATA: lv_sum TYPE p DECIMALS 2,
+      lv_old_sum TYPE p DECIMALS 2,
       lv_old_price TYPE p DECIMALS 2.
 
-DATA: lv_current_line TYPE i.
+DATA: lv_current_line TYPE i,
+      lv_previous_line TYPE i.
+
+
 DATA: gv_itemdescription TYPE C LENGTH 40 VALUE '  '.
 
 DATA: ls_db_table TYPE ZGC_1_OI.
@@ -98,6 +102,13 @@ DATA: this_line TYPE c LENGTH 30.
       IV_ITEMCODE = ls_item-articlecode
     IMPORTING
       EV_ITEMDESC = gv_itemdescription.
+
+LOOP AT lt_item ASSIGNING FIELD-SYMBOL(<ls_item>).
+  IF sy-tabix = lv_current_line.
+    <ls_item>-description = gv_itemdescription.
+    EXIT. " Exit loop after modifying
+  ENDIF.
+ENDLOOP.
 
 
 ENDMODULE.

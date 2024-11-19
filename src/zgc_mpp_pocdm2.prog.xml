@@ -658,9 +658,6 @@
       <RPY_DYFLOW>
        <LINE>  MODULE initialize_table.</LINE>
       </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>  MODULE set_orderid_in_tblrow.</LINE>
-      </RPY_DYFLOW>
       <RPY_DYFLOW/>
       <RPY_DYFLOW>
        <LINE>*</LINE>
