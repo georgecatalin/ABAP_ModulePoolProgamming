@@ -1,5 +1,5 @@
 # Module Pool Progamming with ABAP on SAP
-This is my practice work for learning ABAP Language concepts : topic of module pool programming (screen programming):
+This is my practice work for learning ABAP Language concepts : topic of module pool programming (screen programming)
 - the use of module pool programing events PBP (Process before Output), PAI (Process after input), POV (Process on value request), POH (Process on Help request )
 - creating the "Hello World" module pool programming example
 - navigation between screens
